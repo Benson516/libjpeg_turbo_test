@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>opengl_test</name>
+  <name>libjpeg_trubo_test</name>
   <version>0.0.0</version>
-  <description>The opengl_test package</description>
+  <description>The libjpeg_trubo_test package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/opengl_test</url> -->
+  <!-- <url type="website">http://wiki.ros.org/libjpeg_trubo_test</url> -->
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
@@ -70,16 +70,6 @@
   <exec_depend>cv_bridge</exec_depend>
 
 
-  <build_depend>pcl_conversions</build_depend>
-  <exec_depend>pcl_conversions</exec_depend>
-  <build_depend>pcl_ros</build_depend>
-  <exec_depend>pcl_ros</exec_depend>
-
-
-  <build_depend>opengl</build_depend>
-  <exec_depend>opengl</exec_depend>
-  <build_depend>glut</build_depend>
-  <exec_depend>glut</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

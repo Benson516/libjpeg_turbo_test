@@ -1,11 +1,14 @@
-#include <ROS_ICLU3_v0.hpp>
+#include <time_stamp.hpp>
 
 // Debug
 #include <iostream>
-// test
-#include <FILTER_LIB.h>
+
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv/cv.hpp>
 
 // libjpeg-turbo
+#include <cstring>
 #include <errno.h>
 #include "turbojpeg.h"
 
@@ -130,7 +133,7 @@ void jpeg_decompress_from_file(){
     // Show image
     namedWindow("Decoded image", cv::WINDOW_AUTOSIZE);
     imshow("Decoded image", image_decoded);
-    waitKey(0);
+    cv::waitKey(0);
 
 }
 //------------------------------//
@@ -155,40 +158,6 @@ int main(int argc, char *argv[])
     Time t_c = t_b - t_a;
     t_c.show_sec();
 
-
-    std::shared_ptr<int> a_ptr;
-    a_ptr.reset(new int(5));
-    std::cout << "a.use_count() = " << a_ptr.use_count() << "\n";
-
-    boost::any any_a = a_ptr;
-    a_ptr.reset(new int(0));
-    std::cout << "a.use_count() = " << a_ptr.use_count() << "\n";
-    std::cout << "any_a.use_count = " << ( boost::any_cast< std::shared_ptr<int> >(any_a) ).use_count() << "\n";
-    a_ptr = boost::any_cast< std::shared_ptr<int> >(any_a);
-    std::cout << "a.use_count() = " << a_ptr.use_count() << "\n";
-
-
-    std::shared_ptr<int> *a_ptr_ptr = boost::any_cast< std::shared_ptr<int> >(&any_a);
-    std::cout << "a.use_count() = " << a_ptr.use_count() << "\n";
-
-    //
-    std::cout << "any_a = " << *( boost::any_cast< std::shared_ptr<int> >(any_a) ) << "\n";
-    std::cout << "a.use_count() = " << a_ptr.use_count() << "\n";
-    std::cout << "*a_ptr_ptr = " << *( *a_ptr_ptr ) << "\n";
-    std::cout << "a.use_count() = " << a_ptr.use_count() << "\n";
-
-
-    boost::any any_b = any_a;
-    std::cout << "b.use_count() = " << ( boost::any_cast< std::shared_ptr<int> >(any_b) ).use_count() << "\n";
-    std::cout << "a.use_count() = " << a_ptr.use_count() << "\n";
-
-    //
-    a_ptr.reset(new int(10));
-    // std::cout << "b.use_count() = " << ( boost::any_cast< std::shared_ptr<int> >(any_b) ).use_count() << "\n";
-    boost::any any_a_ptr = &a_ptr;
-    std::cout << "a.use_count() = " << a_ptr.use_count() << "\n";
-    // std::cout << "any_a = " << *( boost::any_cast< std::shared_ptr<int> >(any_a_ptr) ) << "\n";
-    // std::cout << "a.use_count() = " << a_ptr.use_count() << "\n";
 
 
     Time t_end(TIME_PARAM::NOW);
